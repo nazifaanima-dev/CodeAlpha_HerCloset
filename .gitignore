@@ -1,0 +1,13 @@
+node_modules/
+.env
+.env.*
+!.env.example
+npm-debug.log*
+.DS_Store
+*.zip
+*.bak
+*.backup*
+/backup_before_category_rows_*/
+/image-backup-*/
+*-backup*
+public/images/backup-*/

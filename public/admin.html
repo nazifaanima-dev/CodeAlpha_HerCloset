@@ -1,0 +1,34 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#f7f5ef"><title>HerCloset — Admin Studio</title>
+  <link rel="stylesheet" href="/style.css"><link rel="stylesheet" href="/admin.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <script src="/admin.js" defer></script>
+</head>
+<body class="admin-page">
+  <div class="announcement">HERCLOSET · ADMIN STUDIO <span>✳</span> YOUR STORE, YOUR STORY</div>
+  <header class="site-header admin-header"><a class="wordmark" href="/">hercloset<span class="wordmark-dot">.</span></a><nav class="main-nav"><a href="/">View storefront ↗</a></nav><div class="header-actions"><span id="admin-user" class="admin-user">Checking access…</span><button id="admin-logout" class="bag-button" type="button">Log out</button></div></header>
+  <main class="admin-shell">
+    <div class="admin-welcome"><div><div class="eyebrow">STORE CONTROL ROOM</div><h1>Good things,<br><em>well managed.</em></h1><p>Manage your catalogue, customers' orders and store performance.</p></div><span class="admin-mark">HC.</span></div>
+    <div id="admin-alert" class="admin-alert" role="status" hidden></div>
+    <section class="admin-stats" aria-label="Store summary">
+      <article><span>Products</span><strong id="stat-products">—</strong><small id="stat-stock">Total stock units</small></article>
+      <article><span>Orders</span><strong id="stat-orders">—</strong><small id="stat-pending">Pending</small></article>
+      <article><span>Customers</span><strong id="stat-customers">—</strong><small>Registered accounts</small></article>
+      <article><span>Order value</span><strong id="stat-sales">—</strong><small>Excludes cancelled orders</small></article>
+    </section>
+    <section class="admin-section" id="catalogue">
+      <div class="admin-section-head"><div><div class="eyebrow">THE COLLECTION</div><h2>Product <em>management.</em></h2></div><button class="primary-button admin-add" id="new-product" type="button">＋ Add product</button></div>
+      <div class="admin-table-wrap"><table class="admin-table"><thead><tr><th>Product</th><th>Category</th><th>Price</th><th>Stock</th><th>Actions</th></tr></thead><tbody id="products-table"><tr><td colspan="5">Loading products…</td></tr></tbody></table></div>
+    </section>
+    <section class="admin-section" id="orders">
+      <div class="admin-section-head"><div><div class="eyebrow">CUSTOMER ACTIVITY</div><h2>Order <em>management.</em></h2></div><button class="outline-button" id="refresh-orders" type="button">Refresh orders ↻</button></div>
+      <div class="admin-table-wrap"><table class="admin-table orders-table"><thead><tr><th>Order</th><th>Customer</th><th>Items</th><th>Total</th><th>Placed</th><th>Status</th></tr></thead><tbody id="orders-table"><tr><td colspan="6">Loading orders…</td></tr></tbody></table></div>
+    </section>
+    <footer class="admin-footer"><a href="/">← Back to HerCloset storefront</a><span>Private administrator area</span></footer>
+  </main>
+  <dialog id="product-editor" class="admin-dialog"><button class="dialog-close" id="editor-close" aria-label="Close">×</button><div class="eyebrow">CATALOGUE EDITOR</div><h2 id="editor-title">Add a <em>product.</em></h2><form id="product-form" class="feature-form"><input type="hidden" id="product-id"><label for="product-name">Product name</label><input id="product-name" maxlength="150" required><label for="product-category">Category</label><input id="product-category" list="category-options" maxlength="100" required><datalist id="category-options"><option>Clothing</option><option>Bags</option><option>Makeup</option><option>Footwear</option><option>Accessories</option></datalist><label for="product-price">Price (BDT)</label><input id="product-price" type="number" min="0" step="0.01" required><label for="product-stock">Stock quantity</label><input id="product-stock" type="number" min="0" step="1" required><label for="product-image">Image path</label><input id="product-image" placeholder="images/product-name.jpg"><small>Use a file already inside public/images, e.g. images/black-kurti.jpg</small><label for="product-description">Description</label><textarea id="product-description" rows="3" maxlength="5000"></textarea><small id="product-message" role="status"></small><button class="primary-button" type="submit" id="save-product">Save product</button></form></dialog>
+</body></html>

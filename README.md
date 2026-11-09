@@ -1,4 +1,3 @@
-
 # HerCloset - E-commerce Store
 
 A modern fashion and lifestyle e-commerce website built with Node.js, Express.js, MySQL, HTML, CSS and JavaScript.
@@ -30,66 +29,80 @@ A modern fashion and lifestyle e-commerce website built with Node.js, Express.js
 
 ```text
 HerCloset/
-ÃÄÄ config/
-³   ÀÄÄ db.js
-ÃÄÄ public/
-³   ÃÄÄ images/
-³   ÃÄÄ admin.html
-³   ÃÄÄ admin.css
-³   ÃÄÄ admin.js
-³   ÃÄÄ index.html
-³   ÃÄÄ products.html
-³   ÃÄÄ app.js
-³   ÀÄÄ style.css
-ÃÄÄ admin-setup.sql
-ÃÄÄ create-tables.sql
-ÃÄÄ migrate-existing.sql
-ÃÄÄ seed-products.sql
-ÃÄÄ server.js
-ÃÄÄ package.json
-ÀÄÄ README.md
+|
+|-- config/
+|   |-- db.js
+|
+|-- public/
+|   |-- images/
+|   |-- admin.html
+|   |-- admin.css
+|   |-- admin.js
+|   |-- index.html
+|   |-- products.html
+|   |-- app.js
+|   |-- style.css
+|
+|-- admin-setup.sql
+|-- create-tables.sql
+|-- migrate-existing.sql
+|-- seed-products.sql
+|-- server.js
+|-- package.json
+|-- package-lock.json
+|-- README.md
 ```
 
 ## Installation
 
-1. Clone the repository.
+### 1. Clone the Repository
 
 ```bash
 git clone https://github.com/nazifaanima-dev/CodeAlpha_HerCloset.git
 ```
 
-2. Open the project folder.
+### 2. Open the Project Folder
 
 ```bash
 cd CodeAlpha_HerCloset
 ```
 
-3. Install dependencies.
+### 3. Install Dependencies
 
 ```bash
 npm install
 ```
 
-4. Create a `.env` file and configure your local MySQL database credentials.
+### 4. Configure Environment Variables
 
-5. Create the database named `hercloset`.
+Create a `.env` file and configure your local MySQL database credentials.
 
-6. Import the SQL files in the appropriate order:
+### 5. Create the Database
 
-- create-tables.sql
-- migrate-existing.sql
-- seed-products.sql
-- admin-setup.sql
+Create a MySQL database named:
 
-Run only the migrations needed for your database state.
+```sql
+hercloset
+```
 
-7. Start the application.
+### 6. Import SQL Files
+
+The repository includes the following SQL files:
+
+- `create-tables.sql`
+- `migrate-existing.sql`
+- `seed-products.sql`
+- `admin-setup.sql`
+
+Run the appropriate scripts according to your database setup. Avoid rerunning migrations that have already been applied.
+
+### 7. Start the Application
 
 ```bash
 npm start
 ```
 
-8. Open:
+### 8. Open in Browser
 
 ```text
 http://localhost:3000
@@ -97,16 +110,15 @@ http://localhost:3000
 
 ## Database
 
-Database: MySQL
+- Database: MySQL
+- Database Name: hercloset
 
-Database name: `hercloset`
-
-SQL scripts are included in this repository.
+SQL scripts are included in the repository for database setup and migration.
 
 ## Security
 
 - Environment variables are used for database configuration.
-- Passwords are hashed.
+- Passwords are securely hashed.
 - Sensitive credentials should never be committed to GitHub.
 
 ## Developer
